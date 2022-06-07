@@ -48,8 +48,6 @@ const { printSlaver,buySlaver,sellSlaver } = require("./slavers.js");
 	}
 
 	if (input.includes('dalida')) {
-		cheker = true
-		while (cheker) {
 			let str = `Enter "1", if you buy a slave\nEnter "2", if you want sell a slave\nEnter "3", if you want to know about all the slaves\nEnter "4", and find out about yourself\nEnter "0", if you want to exit\n\n> `;
 			cheker = false
 		readline.question(str, (num) => {
@@ -72,8 +70,7 @@ const { printSlaver,buySlaver,sellSlaver } = require("./slavers.js");
 									buySlaver(slaverName, slaverAge, slaverGender);	
 								})
 							})
-						})
-						cheker = true								
+						})								
 						break;
 					case "2":
 						boss.money += 500;
@@ -82,21 +79,17 @@ const { printSlaver,buySlaver,sellSlaver } = require("./slavers.js");
 							sellSlaver(name);
 							readline.close();
 						})
-						cheker = true
 						break;
 					case "3":
 						printSlaver();
-						cheker = true
 						break;
 					case "4":
 						console.log(boss);
-						cheker = true
 						break;
 					case "0":
 						process.exit;
 					default:
 						console.log("Incorrect number!");
-						cheker = true
 						break;
 				}
 						
